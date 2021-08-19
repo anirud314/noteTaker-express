@@ -2,7 +2,9 @@ const router = require('express').Router();
 const util = require('util');
 const fs = require('fs');
 
-const uuidV1 = require('uuid/v1');
+//const uuidV1 = require('uuid/v1');
+const uuid = require('uuid');
+const uuidV1 = uuid.v1();
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -21,7 +23,6 @@ function read(){
 
 
 router.get('/notes', (req, res)=>{ // get all notes from the database
-    //some logic
     /*readFileAsync('../db/db.json', 'utf8').then((notes) => {
         let inputNotes;
 
@@ -39,7 +40,6 @@ router.get('/notes', (req, res)=>{ // get all notes from the database
 });
 
 router.post('/notes', (req, res) => { // post a note into the database
-    //some logic
     const {title, text} = req.body;
     if(!title || !text) {
         throw new Error("Title and Text cannot be blank");
@@ -49,7 +49,8 @@ router.post('/notes', (req, res) => { // post a note into the database
 
     read()
     .then((notes)=> [...notes, newNote])
-    .then((addNoteUpdate) => writeFileAsync('../db/db.json', JSON.stringify(addNoteUpdate)));
+    .then((addNoteUpdate) => writeFileAsync('../db/db.json', JSON.stringify(addNoteUpdate)))
+    .then(() => newNote);
 
 
 });
