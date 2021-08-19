@@ -49,8 +49,8 @@ router.post('/notes', (req, res) => { // post a note into the database
 
     read()
     .then((notes)=> [...notes, newNote])
-    .then((addNoteUpdate) => this.writeFileAsync('db/db.json', JSON.stringify(addNoteUpdate)));
-    
+    .then((addNoteUpdate) => this.writeFileAsync('../db/db.json', JSON.stringify(addNoteUpdate)));
+
 
 });
 
