@@ -1,4 +1,12 @@
 # 11 Express.js: Note Taker
+## Documentation 8/25/21
+
+I am writing some quick documentation to highlight some of my errors, for starters I had an issue with building this app because my apiRoutes were messing up with the way I was writing it. Thanks to my tutor I was able to make fixes and get it to work the way it does currently. However I am now facing heroku issues that cause the app to not run properly when I try to deploy it. I dont know what is going on and I cant parse the heroku error that well. So What I did was try to demo the local host from a previous iteration. I couldnt get heroku to deploy and I didnt have time to fix the error.
+
+![Heroku Error](./Assets/error.jpg)
+
+
+![LocalHost run](./Assets/NoteTaker.gif)
 
 ## Your Task
 
